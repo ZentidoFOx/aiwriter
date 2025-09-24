@@ -162,16 +162,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryButtons = document.querySelectorAll('.category-btn');
     const toolCards = document.querySelectorAll('.tool-card');
 
+    console.log('Category buttons found:', categoryButtons.length);
+    console.log('Tool cards found:', toolCards.length);
+
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
             const category = this.getAttribute('data-category');
+            console.log('Category clicked:', category);
+            
             filterTools(category);
             
-            // Update active button
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Update active button styles
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gray-900', 'text-white');
+                btn.classList.add('bg-gray-100', 'hover:bg-gray-200', 'text-gray-700');
+            });
+            
+            // Set active button styles
             this.classList.add('active');
+            this.classList.remove('bg-gray-100', 'hover:bg-gray-200', 'text-gray-700');
+            this.classList.add('bg-gray-900', 'text-white');
+            
+            console.log('Active button updated:', this.textContent.trim());
         });
     });
+
+    // Initialize with 'all' category
+    if (categoryButtons.length > 0) {
+        filterTools('all');
+    }
 });
 
 // Generate content function
@@ -314,17 +334,47 @@ function showNotification(message, type = 'info') {
 // Filter tools by category
 function filterTools(category) {
     const toolCards = document.querySelectorAll('.tool-card');
+    console.log(`Filtering by category: ${category}`);
+    console.log(`Found ${toolCards.length} tool cards`);
     
-    toolCards.forEach(card => {
+    let visibleCount = 0;
+    
+    toolCards.forEach((card, index) => {
         const cardCategory = card.getAttribute('data-category');
+        console.log(`Card ${index}: category="${cardCategory}"`);
         
         if (category === 'all' || cardCategory === category) {
+            visibleCount++;
+            // Show card with animation delay
             card.style.display = 'block';
-            card.classList.add('animate-fade-in-up');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                card.style.transition = 'all 0.3s ease';
+            }, index * 50); // Staggered animation
         } else {
-            card.style.display = 'none';
+            // Hide card
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-20px)';
+            card.style.transition = 'all 0.2s ease';
+            
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 200);
         }
     });
+    
+    // Show feedback message
+    const activeCategory = category === 'all' ? 'Todas las herramientas' : 
+                          category === 'general' ? 'General Writing' :
+                          category === 'optimization' ? 'Text Optimization' :
+                          category === 'marketing' ? 'Marketing & Business' :
+                          category === 'personal' ? 'Personal' : category;
+    
+    console.log(`Mostrando: ${activeCategory} (${visibleCount} herramientas visibles)`);
 }
 
 // Select tool
