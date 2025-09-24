@@ -1,22 +1,66 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/custom.css';
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = "AI WRITER - Generador de Contenido IA Gratuito", description = "Escribe contenido de alta calidad al instante para cualquier propósito: artículos, blogs, anuncios, redes sociales y más con IA avanzada." } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="escritor IA, generador de contenido, escritor de artículos, escritor de blogs, herramientas de escritura IA, Turin.dev" />
+		<meta name="author" content="Turin.dev" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		
+		<title>{title}</title>
+		
+		<!-- Preload fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<slot />
+	<body class="font-sans antialiased bg-gray-50 text-gray-900">
+		<div class="min-h-screen flex flex-col">
+			<Header />
+			<main class="flex-grow pt-16">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+		
+		<script src="../scripts/main.js"></script>
 	</body>
 </html>
 
 <style>
-	html,
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+	
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		line-height: 1.6;
 	}
 </style>

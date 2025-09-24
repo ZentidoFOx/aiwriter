@@ -1,0 +1,600 @@
+/* Custom styles for AI Writer */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #059669, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background-color: #10b981;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #059669;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom input styles */
+.input-primary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: colors 0.2s;
+  outline: none;
+}
+
+.input-primary:focus {
+  box-shadow: 0 0 0 2px #10b981;
+  border-color: #10b981;
+}
+
+/* Tool card hover effects */
+.tool-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+.tool-card:hover {
+  border-color: #10b981;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid #f3f4f6;
+  border-top: 2px solid #10b981;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+}
+
+/* Focus states for accessibility */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #10b981, 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* Custom shadows */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-medium {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Backdrop blur for modals */
+.backdrop-blur-custom {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Quick action buttons */
+.quick-action-btn {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.quick-action-btn:hover {
+  background-color: #10b981;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Hero Badge Enhanced Styles */
+.hero-badge {
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #10b981, #34d399, #6ee7b7, #10b981);
+  border-radius: 1rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.hero-badge:hover::before {
+  opacity: 0.3;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating animation for sparkles */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(180deg);
+  }
+}
+
+.hero-badge .animate-ping {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite, float 3s ease-in-out infinite;
+}
+
+/* Glass morphism effect */
+.hero-badge {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Text shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.hero-badge:hover span {
+  background: linear-gradient(90deg, #047857, #10b981, #34d399, #10b981, #047857);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Enhanced Tone Selector */
+.tone-selector {
+  position: relative;
+}
+
+.tone-selector:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.25), 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.tone-selector option {
+  padding: 8px 12px;
+  font-weight: 500;
+}
+
+/* Enhanced Generate Button */
+.generate-btn {
+  position: relative;
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.generate-btn:active {
+  transform: scale(0.98);
+}
+
+/* Enhanced Quick Action Buttons */
+.quick-action-enhanced {
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.quick-action-enhanced:active {
+  transform: scale(0.95);
+}
+
+.quick-action-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.quick-action-enhanced:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced See All Tools Button */
+.see-all-tools {
+  position: relative;
+  background-size: 200% 200%;
+  animation: subtleGradient 4s ease infinite;
+}
+
+@keyframes subtleGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.see-all-tools:active {
+  transform: scale(0.98);
+}
+
+/* Pulse animation for sparkles */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.see-all-tools .animate-ping {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite, sparkle 1.5s ease-in-out infinite;
+}
+
+/* Enhanced hover effects for all buttons */
+.tone-selector:hover,
+.generate-btn:hover,
+.quick-action-enhanced:hover,
+.see-all-tools:hover {
+  cursor: pointer;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states for accessibility */
+.tone-selector:focus-visible,
+.generate-btn:focus-visible,
+.quick-action-enhanced:focus-visible,
+.see-all-tools:focus-visible,
+.model-selector:focus-visible,
+.language-selector:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Model and Language Selectors */
+.model-selector,
+.language-selector {
+  position: relative;
+}
+
+.model-selector:focus,
+.language-selector:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -5px rgba(16, 185, 129, 0.25), 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.model-selector option,
+.language-selector option {
+  padding: 6px 10px;
+  font-weight: 500;
+}
+
+/* Compact selector styling */
+.model-selector,
+.language-selector {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Enhanced hover effects for selectors */
+.model-selector:hover,
+.language-selector:hover {
+  cursor: pointer;
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Settings Button and Dropdown */
+.settings-btn {
+  position: relative;
+}
+
+.settings-btn:hover {
+  transform: translateY(-1px);
+}
+
+.settings-btn:active {
+  transform: scale(0.98);
+}
+
+/* Settings Dropdown Styles */
+#settings-dropdown {
+  animation: fadeInDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top right;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#settings-dropdown.hidden {
+  animation: fadeOutUp 0.2s ease-in;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+}
+
+/* Enhanced Radio button styling */
+#settings-dropdown input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  appearance: none;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+#settings-dropdown input[type="radio"]:checked {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #10b981;
+  box-shadow: inset 0 0 0 2px white, 0 0 0 3px rgba(16, 185, 129, 0.2);
+  transform: scale(1.1);
+}
+
+#settings-dropdown input[type="radio"]:hover {
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+  transform: scale(1.05);
+}
+
+#settings-dropdown input[type="radio"]:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+}
+
+/* Model selection cards */
+#settings-dropdown .group {
+  position: relative;
+  overflow: hidden;
+}
+
+#settings-dropdown .group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+#settings-dropdown .group:hover::before {
+  left: 100%;
+}
+
+/* Language grid responsive */
+@media (max-width: 640px) {
+  #settings-dropdown {
+    right: -20px;
+    left: auto;
+    width: calc(100vw - 40px);
+    max-width: 320px;
+  }
+  
+  #settings-dropdown .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Close button styling */
+#close-settings {
+  transition: all 0.2s ease;
+}
+
+#close-settings:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+  transform: rotate(90deg);
+}
+
+/* Header styling */
+#settings-dropdown h3 {
+  background: linear-gradient(135deg, #374151, #1f2937);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar styling for dropdown */
+#settings-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+#settings-dropdown::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+#settings-dropdown::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+#settings-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Enhanced hover effects for language options */
+#settings-dropdown .grid-cols-2 label:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade in animation class */
+.animate-fade-in {
+  animation: fadeInDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
